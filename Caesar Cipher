@@ -1,0 +1,20 @@
+# Caesar cipher 
+
+text = input("Enter text to encrypt: ")
+shift = int(input("Enter shift value: "))
+
+result = ""
+
+for ch in text:
+    if ch >= 'a' and ch <= 'z':
+        base = ord('a')
+        new_code = (ord(ch) - base + shift) % 26 + base
+        result = result + chr(new_code)
+    elif ch >= 'A' and ch <= 'Z':
+        base = ord('A')
+        new_code = (ord(ch) - base + shift) % 26 + base
+        result = result + chr(new_code)
+    else:
+        result = result + ch  # keep spaces or punctuation
+
+print("Encrypted text:", result)
